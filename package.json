@@ -8,8 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
     "next": "9.5.3",
+    "next-google-fonts": "^1.2.1",
+    "next-optimized-images": "^2.6.2",
+    "next-seo": "^4.7.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "styled-components": "^5.2.0",
+    "webp-loader": "^0.6.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1",
+    "responsive-loader": "^2.1.1",
+    "sharp": "^0.26.0"
   }
 }
