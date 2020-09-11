@@ -1,5 +1,5 @@
 export default {
-	titleTemplate: "%s | Ranjeeka Sharma",
+	titleTemplate: "%s — Ranjeeka Sharma",
 	description: "Ranjeeka Sharma's portfolio.",
 	canonical: "https://www.ranjeekasharma.com/",
 	openGraph: {

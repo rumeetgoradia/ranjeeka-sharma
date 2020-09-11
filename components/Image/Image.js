@@ -6,17 +6,24 @@ export default function Image({ image, alt, width, height }) {
 	return (
 		<div
 			style={{
-				width: "100%",
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
-				overflowX: "hidden",
+				overflow: "hidden",
 			}}
 		>
 			<picture>
 				<source srcSet={webPSrc} type="image/webp" />
 				<source srcSet={imgSrc} type="image/jpeg" />
-				<img src={imgSrc} alt={alt} style={{ width, height }} />
+				<img
+					src={imgSrc}
+					alt={alt}
+					style={{
+						width,
+						height,
+						display: "block",
+					}}
+				/>
 			</picture>
 		</div>
 	)
