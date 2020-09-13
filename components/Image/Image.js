@@ -1,43 +1,24 @@
 import PropTypes from "prop-types"
+import Img from "react-optimized-image"
 
-export default function Image({ image, alt, width, height }) {
-	const webPSrc = require(`../../images/${image}?webp`)
-	const imgSrc = require(`../../images/${image}`)
+export default function Image({ image, alt, ...props }) {
 	return (
-		<div
-			style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				overflow: "hidden",
-			}}
-		>
-			<picture>
-				<source srcSet={webPSrc} type="image/webp" />
-				<source srcSet={imgSrc} type="image/jpeg" />
-				<img
-					src={imgSrc}
-					alt={alt}
-					style={{
-						width,
-						height,
-						display: "block",
-					}}
-				/>
-			</picture>
-		</div>
+		<Img
+			src={require(`../../images/${image}`)}
+			alt={alt}
+			title={alt}
+			webp
+			style={{ display: "block" }}
+			{...props}
+		/>
 	)
 }
 
 Image.propTypes = {
 	image: PropTypes.string.isRequired,
 	alt: PropTypes.string,
-	width: PropTypes.string,
-	height: PropTypes.string,
 }
 
 Image.defaultProps = {
 	alt: "Ranjeeka Sharma",
-	width: "100%",
-	height: "auto",
 }

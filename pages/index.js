@@ -19,6 +19,28 @@ const useStyles = makeStyles((theme) => ({
 			height: "100%",
 		},
 	},
+	gridItem: {
+		height: "50vh",
+		[theme.breakpoints.up("md")]: {
+			height: "100vh",
+		},
+	},
+	landingImgContainer: {
+		height: "100%",
+		width: "100%",
+	},
+	landingImg: {
+		width: "100%",
+		height: "100%",
+		objectFit: "cover",
+	},
+	landingContentContainer: {
+		padding: theme.spacing(4),
+		[theme.breakpoints.up("md")]: {
+			padding: theme.spacing(8),
+		},
+	},
+	landingHeader: {},
 }))
 
 const Home = () => {
@@ -29,30 +51,36 @@ const Home = () => {
 	return (
 		<>
 			<NextSeo titleTemplate="%s" title="Ranjeeka Sharma" />
-			<Grid
-				container
-				direction={isMediumWidth ? "row" : "row-reverse"}
-				className={classes.root}
-			>
-				<Grid item xs={12} md={6}>
-					<Image
-						image="test.jpg"
-						height={isMediumWidth ? "100vh" : "auto"}
-						width={isMediumWidth ? "auto" : "100%"}
-					/>
+			<Grid container direction="row" className={classes.root}>
+				<Grid item xs={12} md={6} className={classes.gridItem}>
+					<Image image="test.jpg" className={classes.landingImg} />
 				</Grid>
-				<Grid container item xs={12} md={6} alignItems="center">
-					<Container>
-						<Typography variant="h2" color="primary">
-							Ranjeeka Sharma
-						</Typography>
-						<Link href="/about">
-							<Button>About</Button>
-						</Link>
-						<Link href="/projects">
-							<Button>Projects</Button>
-						</Link>
-					</Container>
+				<Grid
+					container
+					item
+					xs={12}
+					md={6}
+					className={classes.gridItem}
+					alignItems="center"
+				>
+					<Grid item xs={12}>
+						<Container className={classes.landingContentContainer}>
+							<Typography
+								variant="h2"
+								color="textSecondary"
+								className={classes.landingHeader}
+								gutterBottom
+							>
+								Ranjeeka Sharma
+							</Typography>
+							<Link href="/about">
+								<Button>About</Button>
+							</Link>
+							<Link href="/projects">
+								<Button>Projects</Button>
+							</Link>
+						</Container>
+					</Grid>
 				</Grid>
 			</Grid>
 		</>

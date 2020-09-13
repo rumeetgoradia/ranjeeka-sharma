@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 			secondary: "#5c6b73",
 		},
 		background: {
-			default: "#f8edeb",
+			default: "ghostwhite",
 			paper: "#f9f0ef",
 		},
 	},
@@ -32,22 +32,23 @@ const theme = createMuiTheme({
 		fontWeightRegular: 300,
 		fontWeightBold: 500,
 		h1: {
-			fontWeight: 500,
+			fontWeight: 300,
 		},
 		h2: {
-			fontWeight: 500,
+			fontWeight: 200,
+			fontSize: "calc(2rem + 2vw)",
 		},
 		h3: {
-			fontWeight: 500,
+			fontWeight: 300,
 		},
 		h4: {
-			fontWeight: 500,
+			fontWeight: 300,
 		},
 		h5: {
-			fontWeight: 500,
+			fontWeight: 300,
 		},
 		h6: {
-			fontWeight: 500,
+			fontWeight: 300,
 		},
 		subtitle1: {
 			fontWeight: 200,
@@ -60,6 +61,10 @@ const theme = createMuiTheme({
 		},
 		body2: {
 			fontWeight: 300,
+		},
+		button: {
+			fontWeight: 200,
+			letterSpacing: 1,
 		},
 	},
 	props: {
@@ -85,7 +90,7 @@ export default class App extends NextApp {
 		return (
 			<>
 				<DefaultSeo {...SEO} />
-				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&display=swap" />
+				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;1,200;1,300;1,500&display=swap" />
 				<MaterialThemeProvider theme={theme}>
 					<CssBaseline />
 					<Layout>
